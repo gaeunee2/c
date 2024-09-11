@@ -9,8 +9,8 @@ typedef struct Score {
 
 void printScore(Score* p)
 {
-	printf("Áß°£°í»ç ¼ºÀûÀº %d\n", p->midterm);
-	printf("±â¸»°í»ç ¼ºÀûÀº %d\n", p->final);
+	printf("ì¤‘ê°„ê³ ì‚¬ ì„±ì ì€ %d\n", p->midterm);
+	printf("ê¸°ë§ê³ ì‚¬ ì„±ì ì€ %d\n", p->final);
 }
 
 Score* biggerScore(Score* p1, Score* p2)
@@ -64,11 +64,11 @@ int main(void)
     printScore(&s2);
 
     printf("-----------------------------\n");
-    printf("µÑÁß ¼ºÀûÀÌ ÁÁÀº Á¡¼ö:\n");
+    printf("ë‘˜ì¤‘ ì„±ì ì´ ì¢‹ì€ ì ìˆ˜:\n");
     printScore(biggerScore(&s1, &s2));
 
     printf("-----------------------------\n");
-    printf("µÎ ¼ºÀûÀÇ ÃÑ ÇÕ:\n");
+    printf("ë‘ ì„±ì ì˜ ì´ í•©:\n");
 	printScore(totalScore(&s1, &s2));
 
     printf("-----------------------------\n");
