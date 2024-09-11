@@ -17,7 +17,7 @@ int main(void)
 	scanf("%s", sp->name);
 	printf("Enter midterm and final score: ");
 	scanf("%d %d", &sp->midterm, &sp->final);
-	printf("\n�̸�\t�߰�\t�б⸻\n");
+	printf("\nÀÌ¸§\tÁß°£\tÇÐ±â¸»\n");
 	printf("%s\t%d\t%d\n", sp->name, sp->midterm, sp->final);
 
 	free(sp);
