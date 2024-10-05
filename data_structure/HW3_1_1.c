@@ -37,7 +37,7 @@ int is_full(QueueType* q)
 void enqueue(QueueType* q, element item)
 {
 	if (is_full(q)) {
-		printf("´ë±âÀÚ°¡ ²ËÃ¡À¸´Ï ´ÙÀ½ ±âÈ¸¸¦ ÀÌ¿ëÇÏ¼¼¿ä.\n");
+		printf("ëŒ€ê¸°ìê°€ ê½‰ì°¼ìœ¼ë‹ˆ ë‹¤ìŒ ê¸°íšŒë¥¼ ì´ìš©í•˜ì„¸ìš”.\n");
 		return;
 	}
 	q->rear = (q->rear + 1) % MAX_QUEUE_SIZE;
@@ -47,7 +47,7 @@ void enqueue(QueueType* q, element item)
 element dequeue(QueueType* q)
 {
 	if (is_empty(q))
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤");
 	q->front = (q->front + 1) % MAX_QUEUE_SIZE;
 	return q->queue[q->front];
 }
@@ -55,7 +55,7 @@ element dequeue(QueueType* q)
 element peek(QueueType* q)
 {
 	if (is_empty(q))
-		error("Å¥°¡ °ø¹é»óÅÂÀÔ´Ï´Ù");
+		error("íê°€ ê³µë°±ìƒíƒœì…ë‹ˆë‹¤");
 	return q->queue[(q->front + 1) % MAX_QUEUE_SIZE];
 }
 
@@ -85,44 +85,44 @@ int main(void)
 	init(&maleQ);
 	init(&femaleQ);
 
-	printf("¹ÌÆÃ ÁÖ¼± ÇÁ·Î±×·¥ÀÔ´Ï´Ù.\n");
-	printf("i<nsert, °í°´ÀÔ·Â>, c<heck, ´ë±âÀÚ Ã¼Å©>, q<uit>: ");
+	printf("ë¯¸íŒ… ì£¼ì„  í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤.\n");
+	printf("i<nsert, ê³ ê°ì…ë ¥>, c<heck, ëŒ€ê¸°ì ì²´í¬>, q<uit>: ");
 	scanf(" %c", &option);
 
 	while (option != 'q') {
 		switch (option) {
 		case 'i':
-			printf("ÀÌ¸§À» ÀÔ·Â: ");
+			printf("ì´ë¦„ì„ ì…ë ¥: ");
 			scanf("%s", newPerson.name);
 			getchar();
-			printf("¼ºº°À» ÀÔ·Â<m or f>: ");
+			printf("ì„±ë³„ì„ ì…ë ¥<m or f>: ");
 			scanf("%c", &newPerson.gender);
 			
 			if (newPerson.gender == 'm') {
 				enqueue(&maleQ, newPerson);
 				if (get_count(&femaleQ) == 0)
-					printf("¾ÆÁ÷ ´ë»óÀÚ°¡ ¾ø½À´Ï´Ù. ±â´Ù·ÁÁÖ½Ê½Ã¿À.\n");
+					printf("ì•„ì§ ëŒ€ìƒìê°€ ì—†ìŠµë‹ˆë‹¤. ê¸°ë‹¤ë ¤ì£¼ì‹­ì‹œì˜¤.\n");
 				else
-					printf("Ä¿ÇÃÀÌ Åº»ıÇß½À´Ï´Ù! %s¿Í %s\n", dequeue(&maleQ).name, dequeue(&femaleQ).name);
+					printf("ì»¤í”Œì´ íƒ„ìƒí–ˆìŠµë‹ˆë‹¤! %sì™€ %s\n", dequeue(&maleQ).name, dequeue(&femaleQ).name);
 			}
 			else {
 				enqueue(&femaleQ, newPerson);
 				if (get_count(&maleQ) == 0)
-					printf("¾ÆÁ÷ ´ë»óÀÚ°¡ ¾ø½À´Ï´Ù. ±â´Ù·ÁÁÖ½Ê½Ã¿À.\n");
+					printf("ì•„ì§ ëŒ€ìƒìê°€ ì—†ìŠµë‹ˆë‹¤. ê¸°ë‹¤ë ¤ì£¼ì‹­ì‹œì˜¤.\n");
 				else
-					printf("Ä¿ÇÃÀÌ Åº»ıÇß½À´Ï´Ù! %s¿Í %s\n", dequeue(&femaleQ).name, dequeue(&maleQ).name);
+					printf("ì»¤í”Œì´ íƒ„ìƒí–ˆìŠµë‹ˆë‹¤! %sì™€ %s\n", dequeue(&femaleQ).name, dequeue(&maleQ).name);
 			}
 			break;
 
 		case 'c':
-			printf("³²¼º ´ë±âÀÚ %d¸í: ", get_count(&maleQ));
+			printf("ë‚¨ì„± ëŒ€ê¸°ì %dëª…: ", get_count(&maleQ));
 			print_queue(&maleQ);
-			printf("\n¿©¼º ´ë±âÀÚ %d¸í: ", get_count(&femaleQ));
+			printf("\nì—¬ì„± ëŒ€ê¸°ì %dëª…: ", get_count(&femaleQ));
 			print_queue(&femaleQ);
 			printf("\n");
 			break;
 		}
-		printf("i<nsert, °í°´ÀÔ·Â>, c<heck, ´ë±âÀÚ Ã¼Å©>, q<uit>: ");
+		printf("i<nsert, ê³ ê°ì…ë ¥>, c<heck, ëŒ€ê¸°ì ì²´í¬>, q<uit>: ");
 		scanf(" %c", &option);
 	}
 }
