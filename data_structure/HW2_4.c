@@ -28,7 +28,7 @@ int is_full(StackType* s)
 void push(StackType* s, element item)
 {
 	if (is_full(s)) {
-		fprintf(stderr, "½ºÅÃ Æ÷È­ ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
 		return;
 	}
 	else
@@ -38,7 +38,7 @@ void push(StackType* s, element item)
 element pop(StackType* s)
 {
 	if (is_empty(s)) {
-		fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
 		exit(1);
 	}
 	else
@@ -48,7 +48,7 @@ element pop(StackType* s)
 element peek(StackType* s)
 {
 	if (is_empty(s)) {
-		fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
+		fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
 		exit(1);
 	}
 	else
@@ -57,7 +57,7 @@ element peek(StackType* s)
 
 int palindrome(char str[])
 {
-	StackType s; //¿¬°á¸®½ºÆ®¸¦ »ç¿ëÇÏ¸é LinkedStackType s; 
+	StackType s; //ì—°ê²°ë¦¬ìŠ¤íŠ¸ë¥¼ ì‚¬ìš©í•˜ë©´ LinkedStackType s; 
 	int i, len = strlen(str);
 
 	init(&s);
@@ -79,7 +79,7 @@ int main(void)
 	scanf("%s", word);
 
 	if (palindrome(word))
-		printf("palindromeÀÔ´Ï´Ù.\n");
+		printf("palindromeì…ë‹ˆë‹¤.\n");
 	else
-		printf("palindromeÀÌ ¾Æ´Õ´Ï´Ù.\n");
+		printf("palindromeì´ ì•„ë‹™ë‹ˆë‹¤.\n");
 }
