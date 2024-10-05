@@ -64,7 +64,7 @@ ListNode* insert_pos(ListNode* head, int pos, element value)
     if (head == NULL)
         head = p;
     else if (pos < 0 || pos >= get_length(head))
-        error("À§Ä¡ ¿À·ù");
+        error("ìœ„ì¹˜ ì˜¤ë¥˜");
     else {
         for (int i = 0; i < pos; i++) {
             pre = temp;
@@ -91,7 +91,7 @@ ListNode* delete_first(ListNode* head)
 {
     ListNode* removed;
     if (head == NULL)
-        error("»èÁ¦ÇÒ Ç×¸ñÀÌ ¾øÀ½");
+        error("ì‚­ì œí•  í•­ëª©ì´ ì—†ìŒ");
     removed = head;
     head = removed->link;
     free(removed);
@@ -106,15 +106,15 @@ ListNode* delete_last(ListNode* head)
     ListNode* removed;
 
     if (head == NULL)
-        error("»èÁ¦ÇÒ Ç×¸ñÀÌ ¾øÀ½");
+        error("ì‚­ì œí•  í•­ëª©ì´ ì—†ìŒ");
 
-    if (temp->link == NULL) { //node 1°³
+    if (temp->link == NULL) { //node 1ê°œ
         removed = temp->link;
         temp->link = NULL;
         free(removed);
         return NULL;
     }
-    else { //node 2°³ ÀÌ»ó
+    else { //node 2ê°œ ì´ìƒ
         while (temp->link != NULL) {
             prevTemp = temp;
             temp = temp->link;
@@ -133,9 +133,9 @@ ListNode* delete_pos(ListNode* head, int pos)
     ListNode* removed = head;
 
     if (head == NULL)
-        error("»èÁ¦ÇÒ Ç×¸ñÀÌ ¾øÀ½");
+        error("ì‚­ì œí•  í•­ëª©ì´ ì—†ìŒ");
     else if (pos < 0 || pos >= get_length(head))
-        error("À§Ä¡ ¿À·ù");
+        error("ìœ„ì¹˜ ì˜¤ë¥˜");
     else {
         for (int i = 0; i < pos; i++) {
             pre = removed;
@@ -154,7 +154,7 @@ ListNode* delete_by_key(ListNode* head, int key)
     ListNode* removed = head;
 
     if (head == NULL)
-        error("»èÁ¦ÇÒ Ç×¸ñÀÌ ¾øÀ½");
+        error("ì‚­ì œí•  í•­ëª©ì´ ì—†ìŒ");
 
     while (removed != NULL) {
         if (removed->data == key) {
@@ -166,7 +166,7 @@ ListNode* delete_by_key(ListNode* head, int key)
         pre = removed;
         removed = removed->link;
     }
-    error("key°ª ¾øÀ½");
+    error("keyê°’ ì—†ìŒ");
 }
 
 void print_list(ListNode* head)
@@ -210,9 +210,9 @@ int get_total(ListNode* head)
 element get_entry(ListNode* head, int pos)
 {
     if (head == NULL)
-        error("head°¡ ºñ¾îÀÖÀ½");
+        error("headê°€ ë¹„ì–´ìˆìŒ");
     else if (pos < 0 || pos >= get_length(head))
-        error("À§Ä¡ ¿À·ù");
+        error("ìœ„ì¹˜ ì˜¤ë¥˜");
     else {
         for (int i = 0; i < pos; i++)
             head = head->link;
@@ -260,31 +260,31 @@ int main(void)
     printf("list1 = ");
     print_list(list1);
 
-    //itemÀÌ ¸®½ºÆ®¿¡ ÀÖÀ¸¸é 1, ¾øÀ¸¸é 0 ¹İÈ¯
-    printf("list1¿¡ 50ÀÌ ÀÖÀ¸¸é 1, ¾øÀ¸¸é 0: ");
+    //itemì´ ë¦¬ìŠ¤íŠ¸ì— ìˆìœ¼ë©´ 1, ì—†ìœ¼ë©´ 0 ë°˜í™˜
+    printf("list1ì— 50ì´ ìˆìœ¼ë©´ 1, ì—†ìœ¼ë©´ 0: ");
     printf("%d\n", is_in_list(list1, 50));
 
-    //´Ü¼ø ¿¬°á ¸®½ºÆ®¿¡ Á¸ÀçÇÏ´Â ³ëµå ¼ö ¹İÈ¯
-    printf("list1¿¡ Á¸ÀçÇÏ´Â ³ëµå ¼ö: ");
+    //ë‹¨ìˆœ ì—°ê²° ë¦¬ìŠ¤íŠ¸ì— ì¡´ì¬í•˜ëŠ” ë…¸ë“œ ìˆ˜ ë°˜í™˜
+    printf("list1ì— ì¡´ì¬í•˜ëŠ” ë…¸ë“œ ìˆ˜: ");
     printf("%d\n", get_length(list1));
 
-    //´Ü¼ø ¿¬°á ¸®½ºÆ®ÀÇ ¸ğµç µ¥ÀÌÅÍ °ª ´õÇÑ ÇÕ ¹İÈ¯
-    printf("list1 ¸ğµç µ¥ÀÌÅÍ ÇÕ: ");
+    //ë‹¨ìˆœ ì—°ê²° ë¦¬ìŠ¤íŠ¸ì˜ ëª¨ë“  ë°ì´í„° ê°’ ë”í•œ í•© ë°˜í™˜
+    printf("list1 ëª¨ë“  ë°ì´í„° í•©: ");
     printf("%d\n", get_total(list1));
 
-    //posÀ§Ä¡¿¡ ÀÖ´Â ³ëµå data ¹İÈ¯
-    printf("3 index ³ëµå µ¥ÀÌÅÍ: ");
+    //posìœ„ì¹˜ì— ìˆëŠ” ë…¸ë“œ data ë°˜í™˜
+    printf("3 index ë…¸ë“œ ë°ì´í„°: ");
     printf("%d\n", get_entry(list1, 3));
 
     delete_by_key(list1, 10);
-    printf("key°ª 10 »èÁ¦ ÈÄ: ");
+    printf("keyê°’ 10 ì‚­ì œ í›„: ");
     print_list(list1);
 
-    insert_pos(list1, 2, 100); //posÀ§Ä¡¿¡ value°®´Â ³ëµå Ãß°¡
-    printf("2À§Ä¡¿¡ 100 ³ëµå Ãß°¡ ÈÄ: ");
+    insert_pos(list1, 2, 100); //posìœ„ì¹˜ì— valueê°–ëŠ” ë…¸ë“œ ì¶”ê°€
+    printf("2ìœ„ì¹˜ì— 100 ë…¸ë“œ ì¶”ê°€ í›„: ");
     print_list(list1);
 
-    delete_pos(list1, 2); //pos À§Ä¡ ³ëµå »èÁ¦
-    printf("2À§Ä¡ Á¦°Å ÈÄ: ");
+    delete_pos(list1, 2); //pos ìœ„ì¹˜ ë…¸ë“œ ì‚­ì œ
+    printf("2ìœ„ì¹˜ ì œê±° í›„: ");
     print_list(list1);
 }
