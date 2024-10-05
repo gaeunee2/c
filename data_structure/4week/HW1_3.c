@@ -64,7 +64,7 @@ ListNode* insert_pos(ListNode* head, int pos, element value)
     if (head == NULL)
         head = p;
     else if (pos < 0 || pos >= get_length(head))
-        error("À§Ä¡ ¿À·ù");
+        error("ìœ„ì¹˜ ì˜¤ë¥˜");
     else {
         for (int i = 0; i < pos; i++) {
             pre = temp;
@@ -91,7 +91,7 @@ ListNode* delete_first(ListNode* head)
 {
     ListNode* removed;
     if (head == NULL)
-        error("»èÁ¦ÇÒ Ç×¸ñÀÌ ¾øÀ½");
+        error("ì‚­ì œí•  í•­ëª©ì´ ì—†ìŒ");
     removed = head;
     head = removed->link;
     free(removed);
@@ -106,15 +106,15 @@ ListNode* delete_last(ListNode* head)
     ListNode* removed;
 
     if (head == NULL)
-        error("»èÁ¦ÇÒ Ç×¸ñÀÌ ¾øÀ½");
+        error("ì‚­ì œí•  í•­ëª©ì´ ì—†ìŒ");
 
-    if (temp->link == NULL) { //node 1°³
+    if (temp->link == NULL) { //node 1ê°œ
         removed = temp->link;
         temp->link = NULL;
         free(removed);
         return NULL;
     }
-    else { //node 2°³ ÀÌ»ó
+    else { //node 2ê°œ ì´ìƒ
         while (temp->link != NULL) {
             prevTemp = temp;
             temp = temp->link;
@@ -132,9 +132,9 @@ ListNode* delete_pos(ListNode* head, int pos)
     ListNode* removed = head;
 
     if (head == NULL)
-        error("»èÁ¦ÇÒ Ç×¸ñÀÌ ¾øÀ½");
+        error("ì‚­ì œí•  í•­ëª©ì´ ì—†ìŒ");
     else if (pos < 0 || pos >= get_length(head))
-        error("À§Ä¡ ¿À·ù");
+        error("ìœ„ì¹˜ ì˜¤ë¥˜");
     else if (pos == 0) {
         head = removed->link;
         free(removed);
@@ -164,9 +164,9 @@ int get_length(ListNode* head)
 element get_entry(ListNode* head, int pos)
 {
     if (head == NULL)
-        error("head°¡ ºñ¾îÀÖÀ½");
+        error("headê°€ ë¹„ì–´ìˆìŒ");
     else if (pos < 0 || pos >= get_length(head))
-        error("À§Ä¡ ¿À·ù");
+        error("ìœ„ì¹˜ ì˜¤ë¥˜");
     else {
         for (int i = 0; i < pos; i++)
             head = head->link;
@@ -185,7 +185,7 @@ int searchPos(ListNode* head, element w)
         temp = temp->link;
         pos += 1;
     } while (temp != NULL);
-    printf("¾ÆÀÌÅÛ %d´Â º¸À¯ÇÏ°í ÀÖÁö ¾Ê½À´Ï´Ù.\n");
+    printf("ì•„ì´í…œ %dëŠ” ë³´ìœ í•˜ê³  ìˆì§€ ì•ŠìŠµë‹ˆë‹¤.\n");
     return -1;
 }
 
@@ -199,7 +199,7 @@ ListNode* add_item(ListNode* head, element w)
         temp = temp->link;
     }
     if (total + w > MAX_WEIGHT)
-        printf("ÃÖ´ë ¹«°Ô<%dkg> ÃÊ°ú·Î ¾ÆÀÌÅÛ %d¸¦ Ãß°¡ÇÒ ¼ö ¾øÀ½\n", MAX_WEIGHT, w);
+        printf("ìµœëŒ€ ë¬´ê²Œ<%dkg> ì´ˆê³¼ë¡œ ì•„ì´í…œ %dë¥¼ ì¶”ê°€í•  ìˆ˜ ì—†ìŒ\n", MAX_WEIGHT, w);
     else
         head = insert_first(head, w);
     return head;
@@ -209,7 +209,7 @@ void display(ListNode* head)
 {
     ListNode* temp = head;
     if (head == NULL) {
-        printf("ºñ¾îÀÖÀ½\n");
+        printf("ë¹„ì–´ìˆìŒ\n");
         return;
     }
 
@@ -249,7 +249,7 @@ int main(void)
             display(list);
             break;
         }
-        while (getchar() != '\n'); //¹öÆÛ ºñ¿ò
+        while (getchar() != '\n'); //ë²„í¼ ë¹„ì›€
 
     } while (choice != 'q');
 
