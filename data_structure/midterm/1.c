@@ -11,7 +11,7 @@ typedef struct ListNode {
 	struct ListNode* link;
 } ListNode;
 
-ListNode* insert_last(ListNode* head, int value) // º¯°æÇÏÁö ¸»¶ó
+ListNode* insert_last(ListNode* head, int value) // ë³€ê²½í•˜ì§€ ë§ë¼
 {
 
 	ListNode* temp = head;
@@ -20,7 +20,7 @@ ListNode* insert_last(ListNode* head, int value) // º¯°æÇÏÁö ¸»¶ó
 	p->link = NULL;
 
 	// (2)
-	if (head == NULL) // °ø¹é ¸®½ºÆ®ÀÌ¸é
+	if (head == NULL) // ê³µë°± ë¦¬ìŠ¤íŠ¸ì´ë©´
 		head = p;
 	else {
 		while (temp->link != 0)
@@ -31,7 +31,7 @@ ListNode* insert_last(ListNode* head, int value) // º¯°æÇÏÁö ¸»¶ó
 	return head;
 }
 
-// »õ ÇÔ¼ö(µé)À» Ãß°¡
+// ìƒˆ í•¨ìˆ˜(ë“¤)ì„ ì¶”ê°€
 int is_prime(element num)
 {
 	if (num == 1)
@@ -58,7 +58,7 @@ int count_prime_node(ListNode* l)
 	return count;
 }
 
-int main(void) // º¯°æÇÏÁö ¸»¶ó
+int main(void) // ë³€ê²½í•˜ì§€ ë§ë¼
 {
 	ListNode* list = NULL;
 	int n;
