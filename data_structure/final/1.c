@@ -6,12 +6,12 @@
 #define MAX_VERTICES 10
 
 typedef struct GraphType {
-	int n;	// Á¤Á¡ÀÇ °³¼ö
+	int n;	// ì •ì ì˜ ê°œìˆ˜
 	int adj_mat[MAX_VERTICES][MAX_VERTICES];
 } GraphType;
 
-// ±×·¡ÇÁ ÃÊ±âÈ­ 
-void graph_init(GraphType* g) // º¯°æÇÏÁö ¸»¶ó
+// ê·¸ë˜í”„ ì´ˆê¸°í™” 
+void graph_init(GraphType* g) // ë³€ê²½í•˜ì§€ ë§ë¼
 {
 	int r, c;
 	g->n = 0;
@@ -19,20 +19,20 @@ void graph_init(GraphType* g) // º¯°æÇÏÁö ¸»¶ó
 		for (c = 0; c < MAX_VERTICES; c++)
 			g->adj_mat[r][c] = 0;
 }
-// Á¤Á¡ »ğÀÔ ¿¬»ê
-void insert_vertex(GraphType* g, int v) // º¯°æÇÏÁö ¸»¶ó
+// ì •ì  ì‚½ì… ì—°ì‚°
+void insert_vertex(GraphType* g, int v) // ë³€ê²½í•˜ì§€ ë§ë¼
 {
 	if (((g->n) + 1) > MAX_VERTICES) {
-		fprintf(stderr, "±×·¡ÇÁ: Á¤Á¡ÀÇ °³¼ö ÃÊ°ú");
+		fprintf(stderr, "ê·¸ë˜í”„: ì •ì ì˜ ê°œìˆ˜ ì´ˆê³¼");
 		return;
 	}
 	g->n++;
 }
-// °£¼± »ğÀÔ ¿¬»ê
-void insert_edge(GraphType* g, int start, int end) //  // º¯°æÇÏÁö ¸»¶ó: ¹æÇâ±×·¡ÇÁ »ğÀÔ¿¬»êÀ¸·Î ¼öÁ¤ÇßÀ½
+// ê°„ì„  ì‚½ì… ì—°ì‚°
+void insert_edge(GraphType* g, int start, int end) //  // ë³€ê²½í•˜ì§€ ë§ë¼: ë°©í–¥ê·¸ë˜í”„ ì‚½ì…ì—°ì‚°ìœ¼ë¡œ ìˆ˜ì •í–ˆìŒ
 {
 	if (start >= g->n || end >= g->n) {
-		fprintf(stderr, "±×·¡ÇÁ: Á¤Á¡ ¹øÈ£ ¿À·ù");
+		fprintf(stderr, "ê·¸ë˜í”„: ì •ì  ë²ˆí˜¸ ì˜¤ë¥˜");
 		return;
 	}
 	g->adj_mat[start][end] = 1;
@@ -48,7 +48,7 @@ int call_out_degree(GraphType* g, int v)
 	return count;
 }
 
-int main(void) // º¯°æÇÏÁö ¸»¶ó
+int main(void) // ë³€ê²½í•˜ì§€ ë§ë¼
 {
 	GraphType g;
 	int num;
@@ -56,7 +56,7 @@ int main(void) // º¯°æÇÏÁö ¸»¶ó
 
 	graph_init(&g);
 
-	scanf("%d", &num); // Á¤Á¡ÀÇ °³¼ö
+	scanf("%d", &num); // ì •ì ì˜ ê°œìˆ˜
 	g.n = num;
 	scanf("%d %d", &u, &v);
 	while (u != -1 && v != -1) {
