@@ -6,10 +6,10 @@ int main(void)
 {
 	char str[20];
 
-	printf("´Ü¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä(ºóÄ­¾øÀÌ):");
+	printf("ë‹¨ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”(ë¹ˆì¹¸ì—†ì´):");
 	scanf("%s", str);
 
-	printf("Á¡¼ö´Â %d\n", calculatePoint(str));
+	printf("ì ìˆ˜ëŠ” %d\n", calculatePoint(str));
 
 	return 0;
 }
