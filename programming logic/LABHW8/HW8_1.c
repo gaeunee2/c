@@ -4,7 +4,7 @@ int main(void)
 {
 	int i, num, userAnswer, rightAnswer, count = 0;
 
-	printf("¸î ´ÜÀ» ¿¬½ÀÇÏ½Ã°Ú½À´Ï±î?: ");
+	printf("ëª‡ ë‹¨ì„ ì—°ìŠµí•˜ì‹œê² ìŠµë‹ˆê¹Œ?: ");
 	scanf("%d", &num);
 
 	for (i = 1; i < 10; i++) {
@@ -16,7 +16,7 @@ int main(void)
 		if (userAnswer == rightAnswer)
 			count += 1;
 	}
-	printf("%d´ÜÀÇ ±¸±¸´Ü¿¡¼­ %d°³¸¦ ¸Â¾Ò½À´Ï´Ù\n", num, count);
+	printf("%dë‹¨ì˜ êµ¬êµ¬ë‹¨ì—ì„œ %dê°œë¥¼ ë§ì•˜ìŠµë‹ˆë‹¤\n", num, count);
 
 	return 0;
 }
