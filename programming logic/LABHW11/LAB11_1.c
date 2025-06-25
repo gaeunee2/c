@@ -3,9 +3,9 @@
 int sum1ToN(int n);
 int main(void)
 {
-	printf("1ºÎÅÍ %d±îÁöÀÇ ÇÕÀº %d\n", 5, sum1ToN(5));
-	printf("1ºÎÅÍ %d±îÁöÀÇ ÇÕÀº %d\n", 7, sum1ToN(7));
-	printf("1ºÎÅÍ %d±îÁöÀÇ ÇÕÀº %d\n", 10, sum1ToN(10));
+	printf("1ë¶€í„° %dê¹Œì§€ì˜ í•©ì€ %d\n", 5, sum1ToN(5));
+	printf("1ë¶€í„° %dê¹Œì§€ì˜ í•©ì€ %d\n", 7, sum1ToN(7));
+	printf("1ë¶€í„° %dê¹Œì§€ì˜ í•©ì€ %d\n", 10, sum1ToN(10));
 
 	return 0;
 }
