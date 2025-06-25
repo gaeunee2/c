@@ -13,7 +13,7 @@ int main(void)
 		fact *= i;
 		i++;
 	}
-	printf("%dÀÇ Factorial °ªÀº %dÀÌ´Ù.\n", num, fact);
+	printf("%dÃ€Ã‡ Factorial Â°ÂªÃ€Âº %dÃ€ÃŒÂ´Ã™.\n", num, fact);
 
 	return 0;
 }
