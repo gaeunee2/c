@@ -16,9 +16,9 @@ int main(void)
 	}
 
 	if (isPrime)
-		printf("¼Ò¼öÀÔ´Ï´Ù\n");
+		printf("ì†Œìˆ˜ìž…ë‹ˆë‹¤\n");
 	else
-		printf("¼Ò¼ö°¡ ¾Æ´Õ´Ï´Ù\n");
+		printf("ì†Œìˆ˜ê°€ ì•„ë‹™ë‹ˆë‹¤\n");
 
 	return 0;
 }
