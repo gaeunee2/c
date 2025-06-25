@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-int isPrime(int num) // º¯°æÇÏÁö ¸»¶ó
+int isPrime(int num) // ÂºÂ¯Â°Ã¦Ã‡ÃÃÃ¶ Â¸Â»Â¶Ã³
 {
 	int i;
 	for (i = 2; i < num; i++)
@@ -8,7 +8,7 @@ int isPrime(int num) // º¯°æÇÏÁö ¸»¶ó
 			return 0;
 	return 1;
 }
-int main(void) // ÀÛ¼º
+int main(void) // Ã€Ã›Â¼Âº
 {
 	int n;
 	int total = 0;
