@@ -1,0 +1,30 @@
+# 빌드 결과물
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.idb
+
+# 사용자별 환경 파일
+*.user
+*.suo
+
+# Visual Studio 폴더
+.vs/
+Debug/
+Release/
+x64/
+
+# 임시 파일, 로그
+*.log
+*.tlog/
+*.lastbuildstate
+
+# 기타
+ipch/
+*.aps
+*.pch
+
+# OS별 숨김 파일
+Thumbs.db
+.DS_Store
