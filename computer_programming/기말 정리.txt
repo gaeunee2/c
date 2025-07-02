@@ -1,0 +1,25 @@
+
+필기 50점 14문제
+코딩 150점
+
+char str[10] = "abc"; // = {'a', 'b', 'c', '\0'};
+str[0] = 'x'; // O
+
+char *p = "abc"; //"abc"는 문자열 상수
+*p = 'x'; //오류
+
+str은 배열의 이름. str == &str[0]
+str값은 바꿀 수 없음. str = 'x'; //X
+p = str; // O
+
+strlen
+strcmp 같으면 0
+strcpy
+strcat 
+**strtok (숙제 함수 사용)
+atoi
+
+char str[64] = "";
+const char *p = str;
+p[0] = 'A'; // 컴파일 에러
+strcpy(p, "xyz"); // 컴파일 경고
